@@ -1,16 +1,50 @@
-<div class="h-full bg-indigo-900 text-white p-4">
+<div class="h-full flex flex-col p-6 bg-gradient-to-b from-white to-slate-50">
+  <!-- Logo/Brand -->
   <div class="mb-8">
-    <h2 class="text-2xl font-bold">DevHub</h2>
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/30">
+        <span class="text-white font-bold text-xl">D</span>
+      </div>
+      <div>
+        <h2 class="text-xl font-bold text-gray-900">DevHub</h2>
+        <p class="text-xs text-gray-500 font-medium">Internal Portal</p>
+      </div>
+    </div>
   </div>
   
-  <mat-nav-list>
-    <a mat-list-item 
-       *ngFor="let item of menuItems" 
-       [routerLink]="item.path" 
-       routerLinkActive="bg-indigo-700"
-       class="flex items-center space-x-3 p-3 rounded hover:bg-indigo-800 transition-colors mb-2">
-      <mat-icon>{{item.icon}}</mat-icon>
-      <span>{{item.label}}</span>
-    </a>
-  </mat-nav-list>
+  <!-- Navigation -->
+  <nav class="flex-1">
+    <ul class="space-y-2">
+      <li *ngFor="let item of menuItems">
+        <a 
+          [routerLink]="item.path" 
+          routerLinkActive="active"
+          #rla="routerLinkActive"
+          [class]="rla.isActive ? 'sidebar-nav-item active flex items-center gap-3 px-4 py-3.5 rounded-2xl text-white font-semibold transition-all duration-300 shadow-lg' : 'flex items-center gap-3 px-4 py-3.5 rounded-2xl text-gray-600 hover:bg-gray-100 hover:text-gray-900 transition-all duration-200 font-medium'">
+          <div [class]="rla.isActive ? 'w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center' : 'w-10 h-10 bg-gray-100 rounded-xl flex items-center justify-center group-hover:bg-white'">
+            <mat-icon [class]="rla.isActive ? '!text-white !text-xl !w-5 !h-5' : '!text-gray-600 !text-xl !w-5 !h-5'">{{item.icon}}</mat-icon>
+          </div>
+          <span class="text-sm">{{item.label}}</span>
+          <mat-icon *ngIf="rla.isActive" class="!text-white !text-lg !w-4 !h-4 ml-auto">chevron_right</mat-icon>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- User Profile Section -->
+  <div class="mt-auto pt-6 border-t border-gray-200">
+    <div class="user-profile-card flex items-center gap-3 p-4 rounded-2xl cursor-pointer transition-all group hover:shadow-lg">
+      <div class="relative">
+        <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-white font-bold text-sm shadow-lg">
+          JD
+        </div>
+        <div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="font-bold text-sm text-gray-900 truncate">John Doe</p>
+        <p class="text-xs text-gray-500 truncate">Admin</p>
+      </div>
+      <mat-icon class="!text-gray-400 !text-xl !w-5 !h-5 group-hover:!text-gray-600 transition-colors">settings</mat-icon>
+    </div>
+  </div>
 </div>

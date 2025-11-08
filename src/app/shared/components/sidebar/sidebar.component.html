@@ -1,0 +1,16 @@
+<div class="h-full bg-indigo-900 text-white p-4">
+  <div class="mb-8">
+    <h2 class="text-2xl font-bold">DevHub</h2>
+  </div>
+  
+  <mat-nav-list>
+    <a mat-list-item 
+       *ngFor="let item of menuItems" 
+       [routerLink]="item.path" 
+       routerLinkActive="bg-indigo-700"
+       class="flex items-center space-x-3 p-3 rounded hover:bg-indigo-800 transition-colors mb-2">
+      <mat-icon>{{item.icon}}</mat-icon>
+      <span>{{item.label}}</span>
+    </a>
+  </mat-nav-list>
+</div>

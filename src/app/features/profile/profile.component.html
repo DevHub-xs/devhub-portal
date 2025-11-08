@@ -1,0 +1,123 @@
+<div class="flex h-screen">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-indigo-900">
+    <app-sidebar></app-sidebar>
+  </aside>
+  
+  <!-- Main Content -->
+  <main class="flex-1 overflow-auto bg-gray-50">
+    <div class="p-8">
+      <h1 class="text-3xl font-bold mb-6">User Profile</h1>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Profile Card -->
+        <div class="lg:col-span-1">
+          <mat-card class="text-center">
+            <mat-card-content class="pt-6">
+              <div class="w-32 h-32 bg-indigo-100 rounded-full mx-auto flex items-center justify-center mb-4">
+                <mat-icon class="text-indigo-600" style="font-size: 80px; width: 80px; height: 80px;">account_circle</mat-icon>
+              </div>
+              <h2 class="text-2xl font-bold mb-2">John Doe</h2>
+              <p class="text-gray-600 mb-4">john.doe&#64;example.com</p>
+              <button mat-raised-button color="primary" class="w-full mb-2">
+                <mat-icon>photo_camera</mat-icon>
+                Change Photo
+              </button>
+            </mat-card-content>
+          </mat-card>
+          
+          <mat-card class="mt-6">
+            <mat-card-header>
+              <mat-card-title>Account Stats</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="space-y-4 mt-4">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-600">Projects</span>
+                  <span class="font-bold text-indigo-600">15</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-600">Tasks Completed</span>
+                  <span class="font-bold text-green-600">48</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-600">Team Members</span>
+                  <span class="font-bold text-purple-600">6</span>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        
+        <!-- Profile Form -->
+        <div class="lg:col-span-2">
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>Edit Profile</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <form [formGroup]="profileForm" (ngSubmit)="onSave()" class="space-y-4 mt-4">
+                <mat-form-field appearance="outline" class="w-full">
+                  <mat-label>Full Name</mat-label>
+                  <input matInput formControlName="name">
+                  <mat-icon matPrefix>person</mat-icon>
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="w-full">
+                  <mat-label>Email</mat-label>
+                  <input matInput type="email" formControlName="email">
+                  <mat-icon matPrefix>email</mat-icon>
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="w-full">
+                  <mat-label>Phone</mat-label>
+                  <input matInput formControlName="phone">
+                  <mat-icon matPrefix>phone</mat-icon>
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="w-full">
+                  <mat-label>Company</mat-label>
+                  <input matInput formControlName="company">
+                  <mat-icon matPrefix>business</mat-icon>
+                </mat-form-field>
+                
+                <mat-form-field appearance="outline" class="w-full">
+                  <mat-label>Bio</mat-label>
+                  <textarea matInput formControlName="bio" rows="4"></textarea>
+                </mat-form-field>
+                
+                <div class="flex space-x-4">
+                  <button mat-raised-button color="primary" type="submit" [disabled]="!profileForm.valid">
+                    <mat-icon>save</mat-icon>
+                    Save Changes
+                  </button>
+                  <button mat-raised-button type="button">
+                    Cancel
+                  </button>
+                </div>
+              </form>
+            </mat-card-content>
+          </mat-card>
+          
+          <mat-card class="mt-6">
+            <mat-card-header>
+              <mat-card-title>Account Settings</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="space-y-4 mt-4">
+                <button mat-stroked-button color="primary" class="w-full">
+                  <mat-icon>lock</mat-icon>
+                  Change Password
+                </button>
+                <button mat-stroked-button color="warn" class="w-full">
+                  <mat-icon>delete</mat-icon>
+                  Delete Account
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

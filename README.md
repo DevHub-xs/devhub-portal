@@ -1,108 +1,94 @@
 # DevHub Portal
 
-An Angular 17+ Identity Provider (IDP) application built with standalone components, Tailwind CSS, and Angular Material.
+> Modern Angular 17+ Developer Portal with authentication, dashboard, and profile management.
 
-## Features
+[![Angular](https://img.shields.io/badge/Angular-17.3-red?logo=angular)](https://angular.io)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-38bdf8?logo=tailwindcss)](https://tailwindcss.com)
 
-- **Angular 17+ with Standalone Components**: Modern Angular architecture without NgModules
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
-- **Angular Material**: Material Design components for Angular
-- **Lazy Loading**: Route-based code splitting for optimal performance
-- **Feature-based Architecture**: Organized folder structure with core, shared, and feature modules
-- **Responsive Design**: Mobile-first responsive layouts
-- **Authentication Pages**: Login and Register pages with form validation
-- **Dashboard Layout**: Modern dashboard with sidebar navigation
-- **User Profile**: Comprehensive user profile management
+**Professional Internal Developer Portal frontend built with Angular standalone components, Tailwind CSS, and Angular Material.**
 
-## Project Structure
+---
 
-```
-src/
-├── app/
-│   ├── core/                    # Core functionality
-│   │   ├── guards/              # Route guards
-│   │   ├── interceptors/        # HTTP interceptors
-│   │   └── services/            # Core services
-│   ├── shared/                  # Shared resources
-│   │   ├── components/          # Reusable components (sidebar, etc.)
-│   │   ├── directives/          # Custom directives
-│   │   └── pipes/               # Custom pipes
-│   ├── features/                # Feature modules
-│   │   ├── auth/                # Authentication (login, register)
-│   │   ├── dashboard/           # Dashboard with sidebar
-│   │   ├── home/                # Landing page
-│   │   └── profile/             # User profile
-│   ├── app.component.ts         # Root component
-│   ├── app.routes.ts            # Application routes
-│   └── app.config.ts            # Application configuration
-└── ...
-```
+## ✨ Features
 
-## Prerequisites
+- 🚀 **Angular 17+** with standalone components architecture
+- 🎨 **Tailwind CSS** for modern, responsive UI
+- 🔐 **JWT Authentication** with login/register flows
+- 📊 **Dashboard** with sidebar navigation
+- 👤 **User Profile** management
+- ⚡ **Lazy Loading** for optimal performance
+- 🎯 **Feature-based** modular architecture
 
-- Node.js (v18 or higher)
-- npm (v9 or higher)
+## 🚀 Quick Start
 
-## Installation
+### Prerequisites
+- Node.js >= 18.x
+- npm >= 9.x
 
-1. Clone the repository:
+### Installation
+
 ```bash
-git clone https://github.com/DevHub-xs/devhub-portal.git
-cd devhub-portal
-```
-
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-## Development
-
-Run the development server:
-```bash
+# Start development server
 npm start
 ```
 
-Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Visit `http://localhost:4200`
 
-## Build
+### Build for Production
 
-Build the project for production:
 ```bash
 npm run build
 ```
 
-The build artifacts will be stored in the `dist/` directory.
+## 📁 Project Structure
 
-## Running Tests
-
-Run unit tests:
-```bash
-npm test
+```
+src/app/
+├── core/          # Guards, interceptors, core services
+├── shared/        # Reusable components, directives, pipes
+└── features/      # Feature modules (auth, dashboard, profile)
 ```
 
-Run end-to-end tests:
-```bash
-npm run e2e
-```
+## 🛠️ Tech Stack
 
-## Routes
+- **Framework:** Angular 17+ (Standalone Components)
+- **Styling:** Tailwind CSS + Angular Material
+- **Language:** TypeScript 5.x
+- **State:** RxJS
+- **HTTP:** HttpClient with interceptors
 
-- `/home` - Landing page with application overview
-- `/auth/login` - User login page
-- `/auth/register` - User registration page
-- `/dashboard` - Main dashboard with sidebar navigation
-- `/profile` - User profile management
+## 📝 Available Scripts
 
-## Technologies Used
+| Command | Description |
+|---------|-------------|
+| `npm start` | Start dev server at `localhost:4200` |
+| `npm run build` | Production build |
+| `npm test` | Run unit tests |
+| `npm run watch` | Build with watch mode |
 
-- **Angular 17+**: Progressive web application framework
-- **TypeScript**: Typed superset of JavaScript
-- **Tailwind CSS**: Utility-first CSS framework
-- **Angular Material**: Material Design component library
-- **RxJS**: Reactive programming library
-- **SCSS**: CSS preprocessor
+## 🔐 Authentication
 
-## License
+Integrated JWT authentication with:
+- Login/Register pages
+- Route guards
+- HTTP interceptors
+- Token management
 
-This project is licensed under the MIT License.
+## 📄 License
+
+**Copyright © 2024-2025 Pedro Accarini. All Rights Reserved.**
+
+This is proprietary software. See [LICENSE](./LICENSE) for details.
+
+## 👤 Author
+
+**Pedro Accarini**
+- Email: paccarini.bar@outlook.com
+
+---
+
+Built with ❤️ using Angular

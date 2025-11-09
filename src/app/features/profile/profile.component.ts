@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,7 +10,6 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
   selector: 'app-profile',
   standalone: true,
   imports: [
-    SidebarComponent,
     MatCardModule,
     MatButtonModule,
     MatIconModule,

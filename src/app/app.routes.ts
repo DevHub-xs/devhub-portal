@@ -25,10 +25,12 @@ export const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadComponent: () => import('./features/dashboard/dashboard.component').then(m => m.DashboardComponent)
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
   },
   {
     path: 'profile',
-    loadComponent: () => import('./features/profile/profile.component').then(m => m.ProfileComponent)
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
   }
 ];

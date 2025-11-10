@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devhub-portal-cert
+  namespace: devhub-cert
+  labels:
+    app: devhub-portal
+    environment: certification
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devhub-portal
+      environment: certification
+  template:
+    metadata:
+      labels:
+        app: devhub-portal
+        environment: certification
+    spec:
+      containers:
+      - name: portal
+        image: devhub-portal:cert-latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"

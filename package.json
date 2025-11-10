@@ -1,6 +1,6 @@
 {
   "name": "devhub-portal",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "Modern Angular 17+ Developer Portal with authentication, dashboard, and profile management",
   "author": "Pedro Accarini <paccarini.bar@outlook.com>",
   "license": "All Rights Reserved",
@@ -19,8 +19,14 @@
   ],
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --configuration development",
+    "start:dev": "ng serve --configuration development",
+    "start:cert": "ng serve --configuration certification",
+    "start:prod": "ng serve --configuration production",
     "build": "ng build",
+    "build:dev": "ng build --configuration development",
+    "build:cert": "ng build --configuration certification",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

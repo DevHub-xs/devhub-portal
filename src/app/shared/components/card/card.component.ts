@@ -16,7 +16,7 @@ import { scaleIn, hoverScale } from '../../animations/animations';
       
       <!-- Glassmorphism overlay (optional) -->
       <div *ngIf="glassmorphism" 
-           class="absolute inset-0 bg-white/10 dark:bg-black/20 backdrop-blur-lg"></div>
+           class="absolute inset-0 bg-gray-200/40 dark:bg-navy-900/60 backdrop-blur-lg"></div>
       
       <!-- Gradient overlay (optional) -->
       <div *ngIf="gradient" 
@@ -36,14 +36,14 @@ import { scaleIn, hoverScale } from '../../animations/animations';
         </div>
         
         <!-- Footer slot -->
-        <div *ngIf="hasFooter" class="p-6 pt-0 border-t border-gray-100 dark:border-gray-700">
+        <div *ngIf="hasFooter" class="p-6 pt-0 border-t border-neon-300 dark:border-gold-500/20">
           <ng-content select="[footer]"></ng-content>
         </div>
       </div>
       
       <!-- Hover effect indicator -->
       <div *ngIf="hoverable" 
-           class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+           class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-500 to-neon-400 dark:from-gold-500 dark:to-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
     </div>
   `,
   animations: [scaleIn, hoverScale]
@@ -78,10 +78,10 @@ export class CardComponent {
   getCardClass(): string {
     const baseClasses = 'rounded-2xl transition-all duration-300';
     const variantClasses = {
-      elevated: 'bg-white dark:bg-gray-800 shadow-soft hover:shadow-soft-lg border border-gray-100 dark:border-gray-700',
-      outlined: 'bg-transparent border-2 border-gray-200 dark:border-gray-700 hover:border-primary-500',
-      flat: 'bg-gray-50 dark:bg-gray-900',
-      glass: 'bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl shadow-glass border border-white/20'
+      elevated: 'bg-white dark:bg-navy-950 shadow-soft hover:shadow-soft-lg border border-neon-400 dark:border-gold-500/30 text-gray-900 dark:text-gold-400',
+      outlined: 'bg-transparent border-2 border-neon-500 dark:border-navy-900 hover:border-neon-600 dark:hover:border-gold-500 text-gray-900 dark:text-gold-400',
+      flat: 'bg-gray-100 dark:bg-navy-950 text-gray-900 dark:text-gold-400',
+      glass: 'bg-white/95 dark:bg-navy-950/90 backdrop-blur-xl shadow-glass border border-neon-400/60 dark:border-gold-500/30 text-gray-900 dark:text-gold-400'
     };
     
     const hoverClass = this.hoverable ? 'hover:-translate-y-1' : '';
@@ -91,6 +91,6 @@ export class CardComponent {
   }
 
   getGradientClass(): string {
-    return 'bg-gradient-to-br from-primary-500 via-secondary-500 to-primary-600';
+    return 'bg-gradient-to-br from-gold-500 via-primary-500 to-gold-600';
   }
 }

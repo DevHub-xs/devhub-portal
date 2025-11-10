@@ -1,4 +1,14 @@
-<div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+<div class="min-h-screen bg-gray-50 dark:bg-black">
+  <!-- Dark Mode Toggle Button -->
+  <button 
+    (click)="toggleDarkMode()"
+    class="fixed top-4 right-4 z-50 w-12 h-12 rounded-full bg-gradient-to-br from-gold-600 to-primary-500 text-black shadow-2xl hover:shadow-3xl hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center"
+    [attr.aria-label]="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+    <span class="material-icons text-xl">
+      {{ isDarkMode ? 'light_mode' : 'dark_mode' }}
+    </span>
+  </button>
+
   <!-- Toast Notifications -->
   <app-toast-container></app-toast-container>
   

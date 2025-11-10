@@ -1,62 +1,46 @@
-# DevHub Portal - DevOps Configuration
+# .devhub/
 
-This directory contains all CI/CD, deployment, and infrastructure configurations for the DevHub Portal (Frontend).
+This folder contains DevHub-generated status information for your project.
 
 ## Structure
 
 ```
 .devhub/
-├── ci/                          # CI/CD Pipeline configurations
-│   ├── development/
-│   ├── certification/
-│   └── production/
-│
-├── deployment/                  # Deployment configurations
-│   ├── development/
-│   │   ├── docker/
-│   │   └── kubernetes/
-│   ├── certification/
-│   │   ├── docker/
-│   │   ├── kubernetes/
-│   │   ├── render/
-│   │   └── aws/
-│   └── production/
-│       ├── docker/
-│       ├── kubernetes/
-│       ├── render/
-│       └── aws/
-│
-├── scripts/                     # Deployment automation scripts
-│   ├── deploy-dev.sh
-│   ├── deploy-cert.sh
-│   └── deploy-prod.sh
-│
-└── docs/                        # DevOps documentation
-    └── DEPLOYMENT_GUIDE.md
+├── deployment.yaml    # Deployment status (dev/cert/prod)
+├── security.yaml      # Security scans & compliance
+├── quality.yaml       # Code quality & tests
+└── integration.yaml   # External services status
 ```
 
-## Quick Start
+## Purpose
 
-### Local Development
+**Like `.git/` for Git, `.devhub/` is for DevHub**
+
+Browse these files to understand:
+- 🚀 **Deployment** - What's deployed where
+- 🔒 **Security** - Vulnerabilities & compliance
+- ✅ **Quality** - Test coverage & code health
+- 🔗 **Integration** - External services status
+
+## Usage
+
 ```bash
-bash .devhub/scripts/deploy-dev.sh
+# Check deployment status
+cat .devhub/deployment.yaml
+
+# Review security issues
+cat .devhub/security.yaml
+
+# View code quality
+cat .devhub/quality.yaml
+
+# Monitor integrations
+cat .devhub/integration.yaml
 ```
 
-### Certification Deployment
-```bash
-export DEPLOY_TARGET=k8s  # or 'render', 'aws'
-bash .devhub/scripts/deploy-cert.sh
-```
+## Important
 
-### Production Deployment
-```bash
-export DEPLOY_TARGET=k8s  # or 'aws'
-bash .devhub/scripts/deploy-prod.sh
-```
+⚠️ **Do not manually edit these files**
 
-## Deployment Targets
+They are generated and updated by the DevHub platform based on your `devhub.config.yaml`.
 
-- **Docker**: Local development
-- **Kubernetes**: Certification and production clusters
-- **Render**: Static site hosting (easy deployment)
-- **AWS S3 + CloudFront**: Scalable static hosting with CDN

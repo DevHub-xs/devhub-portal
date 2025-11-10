@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900">
+  <!-- Toast Notifications -->
+  <app-toast-container></app-toast-container>
+  
+  <!-- Main Content with Route Animations -->
+  <div [@routeAnimation]="prepareRoute(outlet)" class="h-full">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+</div>

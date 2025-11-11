@@ -13,21 +13,21 @@
     <mat-card class="!p-8 !rounded-2xl !border !border-neon-400 dark:!border-gold-500/30 !bg-white dark:!bg-navy-950 !shadow-xl !shadow-neon-200/50 dark:!shadow-gold-500/10 backdrop-blur-sm">
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-5">
         
-        <!-- Name Field -->
+        <!-- Username Field -->
         <div>
-          <label class="block text-sm font-semibold text-gray-700 dark:text-gold-400 mb-2">Full name</label>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-gold-400 mb-2">Username</label>
           <mat-form-field appearance="outline" class="w-full modern-input">
             <input 
               matInput 
               type="text" 
-              formControlName="name" 
-              placeholder="John Doe"
+              formControlName="username" 
+              placeholder="johndoe"
               class="text-base dark:!text-gold-300">
-            <mat-error *ngIf="registerForm.get('name')?.hasError('required')">
-              Name is required
+            <mat-error *ngIf="registerForm.get('username')?.hasError('required')">
+              Username is required
             </mat-error>
-            <mat-error *ngIf="registerForm.get('name')?.hasError('minlength')">
-              Name must be at least 2 characters
+            <mat-error *ngIf="registerForm.get('username')?.hasError('minlength')">
+              Username must be at least 3 characters
             </mat-error>
           </mat-form-field>
         </div>

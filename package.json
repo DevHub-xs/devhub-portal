@@ -70,5 +70,8 @@
     "rimraf": ">=6.0.0",
     "glob": ">=11.0.0",
     "inflight": "npm:@aashutoshrathi/inflight@^1.0.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.53.2"
   }
 }

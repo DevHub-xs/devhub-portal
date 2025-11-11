@@ -43,9 +43,7 @@ export class RegisterComponent {
       username: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]],
-      firstName: [''],
-      lastName: ['']
+      confirmPassword: ['', [Validators.required]]
     }, { validators: this.passwordsMatchValidator() });
   }
 
@@ -73,8 +71,8 @@ export class RegisterComponent {
       return;
     }
 
-    const { username, email, password, firstName, lastName } = this.registerForm.value;
-    const payload = { username, email, password, firstName, lastName };
+    const { username, email, password } = this.registerForm.value;
+    const payload = { username, email, password };
 
     this.loading = true;
     this.authService.register(payload).subscribe({

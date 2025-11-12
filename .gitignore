@@ -45,8 +45,9 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+# Allow specific environment template files, but ignore the base environment.ts
+# Angular will use file replacements during build
 /src/environments/environment.prod.ts
-/src/environments/environment.ts
 
 .vscode/
 .vscode
@@ -56,5 +57,3 @@ Thumbs.db
 *.env.local
 *.env.*.local
 *.env
-.package-lock.json
-package-lock.json

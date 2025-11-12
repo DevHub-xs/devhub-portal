@@ -1,47 +1,47 @@
-<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-4">
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 via-white to-neon-50 dark:from-black dark:via-gray-900 dark:to-gray-800 p-4">
   <div class="w-full max-w-md">
     <!-- Logo/Brand -->
     <div class="text-center mb-8">
-      <div class="inline-flex items-center justify-center w-16 h-16 bg-indigo-600 rounded-2xl mb-4 shadow-lg shadow-indigo-500/30">
-        <span class="text-2xl font-bold text-white">DH</span>
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-neon-600 to-neon-500 dark:from-gold-600 dark:to-primary-500 rounded-2xl mb-4 shadow-lg shadow-neon-500/30 dark:shadow-gold-500/30">
+        <span class="text-2xl font-bold text-white dark:text-black">DH</span>
       </div>
-      <h1 class="text-3xl font-bold text-gray-900 mb-2">Create your account</h1>
-      <p class="text-gray-600">Join DevHub and start collaborating</p>
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">Create your account</h1>
+      <p class="text-gray-600 dark:text-gray-400">Join DevHub and start collaborating</p>
     </div>
 
     <!-- Register Card -->
-    <mat-card class="!p-8 !rounded-2xl !border-0 !shadow-xl !shadow-gray-200/50 backdrop-blur-sm">
+    <mat-card class="!p-8 !rounded-2xl !border !border-neon-400 dark:!border-gold-500/30 !bg-white dark:!bg-navy-950 !shadow-xl !shadow-neon-200/50 dark:!shadow-gold-500/10 backdrop-blur-sm">
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-5">
         
-        <!-- Name Field -->
+        <!-- Username Field -->
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Full name</label>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-gold-400 mb-2">Username</label>
           <mat-form-field appearance="outline" class="w-full modern-input">
             <input 
               matInput 
               type="text" 
-              formControlName="name" 
-              placeholder="John Doe"
-              class="text-base">
-            <mat-error *ngIf="registerForm.get('name')?.hasError('required')">
-              Name is required
+              formControlName="username" 
+              placeholder="johndoe"
+              class="text-base dark:!text-gold-300">
+            <mat-error *ngIf="registerForm.get('username')?.hasError('required')">
+              Username is required
             </mat-error>
-            <mat-error *ngIf="registerForm.get('name')?.hasError('minlength')">
-              Name must be at least 2 characters
+            <mat-error *ngIf="registerForm.get('username')?.hasError('minlength')">
+              Username must be at least 3 characters
             </mat-error>
           </mat-form-field>
         </div>
 
         <!-- Email Field -->
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Email address</label>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-gold-400 mb-2">Email address</label>
           <mat-form-field appearance="outline" class="w-full modern-input">
             <input 
               matInput 
               type="email" 
               formControlName="email" 
               placeholder="you&#64;example.com"
-              class="text-base">
+              class="text-base dark:!text-gold-300">
             <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
               Email is required
             </mat-error>
@@ -53,20 +53,20 @@
 
         <!-- Password Field -->
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Password</label>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-gold-400 mb-2">Password</label>
           <mat-form-field appearance="outline" class="w-full modern-input">
             <input 
               matInput 
               [type]="hidePassword ? 'password' : 'text'" 
               formControlName="password" 
               placeholder="Create a password"
-              class="text-base">
+              class="text-base dark:!text-gold-300">
             <button 
               mat-icon-button 
               matSuffix 
               (click)="hidePassword = !hidePassword" 
               type="button"
-              class="!text-gray-400 hover:!text-gray-600">
+              class="!text-gray-400 hover:!text-gray-600 dark:!text-gold-500 dark:hover:!text-gold-400">
               <mat-icon class="!text-xl">{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             <mat-error *ngIf="registerForm.get('password')?.hasError('required')">
@@ -80,20 +80,20 @@
 
         <!-- Confirm Password Field -->
         <div>
-          <label class="block text-sm font-semibold text-gray-700 mb-2">Confirm password</label>
+          <label class="block text-sm font-semibold text-gray-700 dark:text-gold-400 mb-2">Confirm password</label>
           <mat-form-field appearance="outline" class="w-full modern-input">
             <input 
               matInput 
               [type]="hideConfirmPassword ? 'password' : 'text'" 
               formControlName="confirmPassword" 
               placeholder="Confirm your password"
-              class="text-base">
+              class="text-base dark:!text-gold-300">
             <button 
               mat-icon-button 
               matSuffix 
               (click)="hideConfirmPassword = !hideConfirmPassword" 
               type="button"
-              class="!text-gray-400 hover:!text-gray-600">
+              class="!text-gray-400 hover:!text-gray-600 dark:!text-gold-500 dark:hover:!text-gold-400">
               <mat-icon class="!text-xl">{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             <mat-error *ngIf="registerForm.get('confirmPassword')?.hasError('required')">
@@ -109,29 +109,34 @@
         <div class="flex items-start">
           <input 
             type="checkbox" 
-            class="w-4 h-4 mt-1 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 cursor-pointer">
-          <label class="ml-2 text-sm text-gray-700">
-            I agree to the <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium">Terms of Service</a> and <a href="#" class="text-indigo-600 hover:text-indigo-700 font-medium">Privacy Policy</a>
+            class="w-4 h-4 mt-1 text-neon-600 dark:text-gold-600 border-gray-300 dark:border-gold-500 rounded focus:ring-neon-500 dark:focus:ring-gold-500 cursor-pointer">
+          <label class="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            I agree to the <a href="#" class="text-neon-600 dark:text-gold-500 hover:text-neon-700 dark:hover:text-gold-400 font-medium">Terms of Service</a> and <a href="#" class="text-neon-600 dark:text-gold-500 hover:text-neon-700 dark:hover:text-gold-400 font-medium">Privacy Policy</a>
           </label>
         </div>
 
         <!-- Submit Button -->
         <button 
-          mat-raised-button 
-          color="primary" 
           type="submit" 
           [disabled]="!registerForm.valid" 
-          class="!w-full !h-12 !text-base !font-semibold !rounded-xl !shadow-lg !shadow-indigo-500/30 hover:!shadow-xl hover:!shadow-indigo-500/40 disabled:!opacity-50 disabled:!cursor-not-allowed">
+          class="w-full h-12 text-base font-semibold rounded-xl shadow-lg transition-all duration-200
+                 bg-gradient-to-r from-neon-500 to-neon-600 hover:from-neon-600 hover:to-neon-700 
+                 dark:from-gold-500 dark:to-gold-600 dark:hover:from-gold-600 dark:hover:to-gold-700
+                 text-white dark:text-black
+                 shadow-neon-500/30 dark:shadow-gold-500/30 
+                 hover:shadow-xl hover:shadow-neon-500/50 dark:hover:shadow-gold-500/50
+                 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-lg
+                 transform hover:scale-[1.02] active:scale-[0.98]">
           Create account
         </button>
 
         <!-- Divider -->
         <div class="relative my-6">
           <div class="absolute inset-0 flex items-center">
-            <div class="w-full border-t border-gray-200"></div>
+            <div class="w-full border-t border-gray-200 dark:border-gray-700"></div>
           </div>
           <div class="relative flex justify-center text-sm">
-            <span class="px-4 bg-white text-gray-500">Already have an account?</span>
+            <span class="px-4 bg-white dark:bg-navy-950 text-gray-500 dark:text-gray-400">Already have an account?</span>
           </div>
         </div>
 
@@ -139,7 +144,7 @@
         <div class="text-center">
           <a 
             routerLink="/auth/login" 
-            class="text-indigo-600 hover:text-indigo-700 font-semibold text-sm">
+            class="text-neon-600 dark:text-gold-500 hover:text-neon-700 dark:hover:text-gold-400 font-semibold text-sm">
             Sign in instead →
           </a>
         </div>

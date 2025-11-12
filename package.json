@@ -1,6 +1,6 @@
 {
   "name": "devhub-portal",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Modern Angular 17+ Developer Portal with authentication, dashboard, and profile management",
   "author": "Pedro Accarini <paccarini.bar@outlook.com>",
   "license": "All Rights Reserved",
@@ -49,6 +49,7 @@
     "@angular-devkit/build-angular": "^17.3.17",
     "@angular/cli": "^20.3.9",
     "@angular/compiler-cli": "^17.3.0",
+    "@tailwindcss/forms": "^0.5.10",
     "@types/jasmine": "~5.1.0",
     "autoprefixer": "^10.4.21",
     "jasmine-core": "~5.1.0",
@@ -60,5 +61,17 @@
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.18",
     "typescript": "~5.4.2"
+  },
+  "overrides": {
+    "esbuild": ">=0.25.0",
+    "http-proxy-middleware": ">=3.0.0",
+    "tmp": ">=0.2.4",
+    "webpack-dev-server": ">=5.2.1",
+    "rimraf": ">=6.0.0",
+    "glob": ">=11.0.0",
+    "inflight": "npm:@aashutoshrathi/inflight@^1.0.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.53.2"
   }
 }

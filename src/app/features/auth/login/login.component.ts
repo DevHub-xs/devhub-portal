@@ -39,6 +39,12 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       console.log('Login form submitted:', this.loginForm.value);
       // Implement actual login logic here
+      // call backend service that handles login
+
+      
+
+
+
     }
   }
 }

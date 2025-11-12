@@ -1,6 +1,6 @@
 {
   "name": "devhub-portal",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Modern Angular 17+ Developer Portal with authentication, dashboard, and profile management",
   "author": "Pedro Accarini <paccarini.bar@outlook.com>",
   "license": "All Rights Reserved",

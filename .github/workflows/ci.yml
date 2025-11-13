@@ -1,0 +1,12 @@
+name: CI DevHub Portal
+
+on:
+  push:
+    branches: [feature/*]
+  pull_request:
+    branches: [main, development, feature/*]
+
+jobs:
+  ci:
+    name: CI DevHub Portal
+    uses: DevHub-xs/devhub-actions/workflows/portal-ci.yml@v1

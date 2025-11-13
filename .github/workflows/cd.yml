@@ -1,0 +1,10 @@
+name: CD DevHub Portal
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Deploy DevHub Portal
+    uses: DevHub-xs/devhub-actions/workflows/portal-cd.yml@v1

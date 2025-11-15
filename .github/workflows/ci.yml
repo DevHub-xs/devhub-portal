@@ -8,5 +8,7 @@ on:
 
 jobs:
   ci:
-    name: CI DevHub Portal
-    uses: DevHub-xs/devhub-actions/workflows/portal-ci.yml@v1
+    name: Integration
+    uses: DevHub-xs/devhub-actions/.github/workflows/portal-ci.yml@main
+    with:
+      node-version: '20.x'
